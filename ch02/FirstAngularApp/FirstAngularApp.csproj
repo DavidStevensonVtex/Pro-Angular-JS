@@ -104,6 +104,7 @@
     <Content Include="Content\angularjs\angular.min.js.map" />
     <Content Include="Content\angularjs\errors.json" />
     <Content Include="Content\angularjs\version.json" />
+    <Content Include="Content\todo.json" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
