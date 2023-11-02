@@ -24,7 +24,7 @@
                 var resultArr = [];
                 angular.forEach(items, function (item) {
                     if (item.done == false || showComplete == true) {
-                        result.arr.push(item);
+                        resultArr.push(item);
                     }
                 });
                 return resultArr;
@@ -77,12 +77,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in todo.items | filter: { done: false } | orderBy: 'action' ">
+                <tr ng-repeat="item in todo.items | checkedItems:showComplete | orderBy: 'action' ">
                     <td>{{item.action}}</td>
                     <td><input type="checkbox" ng-model="item.done" /></td>
                 </tr>
             </tbody>
         </table>
+
+        <div class="checkbox-inline">
+            <label><input type="checkbox" ng-model="showComplete" /> Show Complete</label>
+        </div>
     </div>
 </body>
 </html>
