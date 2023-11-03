@@ -9,15 +9,11 @@
         var myApp = angular.module("demo", []);
 
         myApp.controller("demoCtrl", function ($scope, $http) {
-            var promise = $http.get("todo.json")
-                .then(function (response) {
-                    $scope.todos = response.data;
-                }, function () {
-                    $scope.todos = [{ action: "Error" }]
-                })
-                .then(function () {
-                    $scope.todos.push({ action: "Request Complete" });
-                });
+            $http.get("todo.json").success(function (data) {
+                var jsonString = angular.toJson(data);
+                console.log(jsonString);
+                $scope.todos = angular.fromJson(jsonString);
+            });
         });
 
     </script>
