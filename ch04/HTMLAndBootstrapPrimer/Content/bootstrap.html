@@ -8,6 +8,40 @@
 </head>
 <body>
     <div class="panel">
+        <h3 class="panel-header">
+            Form Elements
+        </h3>
+        <div class="form-group">
+            <label>Name:</label>
+            <input name="name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            <input name="email" class="form-control" />
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="junkmail" value="yes" checked />
+                Yes, send me endless junk mail
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="junkmail" value="no" />
+                No, I never want to hear from you again
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="termsandconditions" />
+                I agree to terms and conditions
+            </label>
+        </div>
+
+        <input type="button" class="btn btn-primary" value="Subscribe" />
+    </div>
+
+    <div class="panel">
         <h3 class="panel-heading">Striped, Bordered and Highlighted Table</h3>
         <table class="table table-striped table-bordered table-hover">
             <tr><th>Country</th><th>Capital City</th></tr>
