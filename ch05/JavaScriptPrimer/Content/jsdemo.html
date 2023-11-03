@@ -4,11 +4,9 @@
     <title>Example</title>
     <script src="angularjs/angular.js"></script>
     <script type="text/javascript">
-        function myFunc() {
-            console.log("This is a statement");
-        }
-
-        myFunc();
+        console.log(angular.isString("Hello") + " " + angular.isArray(23));
+        console.log("I am " + angular.uppercase("shouting"));
+        console.log("I am " + angular.lowercase("WhiSpeRing"));
     </script>
 </head>
 <body>
