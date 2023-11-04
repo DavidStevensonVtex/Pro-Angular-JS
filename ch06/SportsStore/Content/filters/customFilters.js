@@ -43,6 +43,8 @@
 				for (var i = 0; i < Math.ceil(data.length / size); i++) {
 					result.push(i);
 				}
+
+				return result;
 			}
 			else {
 				return data;
