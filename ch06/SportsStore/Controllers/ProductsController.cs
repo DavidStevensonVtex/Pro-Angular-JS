@@ -6,7 +6,7 @@ namespace SportsStore.Controllers
 {
     public class ProductsController : ApiController
     {
-        //[Route("/products")]
+        [Route("products")]
         [HttpGet]
         public IEnumerable<Product> GetProducts()
         {
