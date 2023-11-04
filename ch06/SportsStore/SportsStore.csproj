@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\angularjs\angular.js" />
+    <Content Include="Content\app.html" />
     <Content Include="Content\ngmodules\angular-resource.js" />
     <Content Include="Content\ngmodules\angular-route.js" />
     <Content Include="favicon.ico" />
