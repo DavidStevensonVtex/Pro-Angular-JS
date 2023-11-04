@@ -145,6 +145,7 @@
     <Content Include="Content\angularjs\angular.js" />
     <Content Include="Content\app.html" />
     <Content Include="Content\controllers\sportsStore.js" />
+    <Content Include="Content\filters\customFilters.js" />
     <Content Include="Content\ngmodules\angular-resource.js" />
     <Content Include="Content\ngmodules\angular-route.js" />
     <Content Include="favicon.ico" />
@@ -184,7 +185,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\components\" />
-    <Folder Include="Content\filters\" />
     <Folder Include="Content\views\" />
   </ItemGroup>
   <ItemGroup>
