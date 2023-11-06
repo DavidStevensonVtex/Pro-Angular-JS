@@ -30,4 +30,29 @@
 				return cartData;
 			}
 		}
-	});
+	})
+	.directive("cartSummary", function (cart) {
+		return { 
+			restrict: "E",
+			templateUrl: "components/cart/cartSummary.html",
+			controller: function ($scope) {
+				let cartData = cart.getProducts();
+
+				$scope.total = function () {
+					let total = 0;
+					for (cartItem of cartData) {
+						total += (cartItem.price * cartItem.count);
+					}
+					return total;
+				}
+
+				$scope.itemCount = function () {
+					let total = 0;
+					for (cartItem of cartData) {
+						total += cartItem.count;
+					}
+					return total;
+				}
+			}
+		}
+	})

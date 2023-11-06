@@ -144,7 +144,7 @@
   <ItemGroup>
     <Content Include="Content\angularjs\angular.js" />
     <Content Include="Content\app.html" />
-    <Content Include="Content\components\cart.js" />
+    <Content Include="Content\components\cart\cart.js" />
     <Content Include="Content\controllers\productListControllers.js" />
     <Content Include="Content\controllers\sportsStore.js" />
     <Content Include="Content\filters\customFilters.js" />
