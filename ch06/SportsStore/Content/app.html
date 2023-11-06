@@ -10,15 +10,15 @@
             .config(function ($routeProvider) {
 
                 $routeProvider.when("/checkout", {
-                    templateUrl: "/views/checkoutSummary.html"
+                    templateUrl: "/Content/views/checkoutSummary.html"
                 });
 
                 $routeProvider.when("/products", {
-                    templateUrl: "/views/productList.html"
+					templateUrl: "/Content/views/productList.html"
                 });
 
                 $routeProvider.otherwise({
-                    templateUrl: "/views/productList.html"
+					templateUrl: "/Content/views/productList.html"
                 });
             });
     </script>
