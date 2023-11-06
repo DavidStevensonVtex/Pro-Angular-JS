@@ -28,6 +28,6 @@
 			return $scope.selectedPage == page ? productListActiveClass : "";
 		}
 		$scope.addProductToCart = function (product) {
-			cart.addProductToCart(product.id, product.name, product.price);
+			cart.addProduct(product.id, product.name, product.price);
 		}
 	});

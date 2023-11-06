@@ -12,7 +12,7 @@
 					}
 				}
 
-				if (!addedToExistingITem) {
+				if (!addedToExistingItem) {
 					cartData.push({ count: 1, id: id, price: price, name: name });
 				}
 			},
