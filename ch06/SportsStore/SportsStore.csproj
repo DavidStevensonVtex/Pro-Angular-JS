@@ -144,6 +144,7 @@
   <ItemGroup>
     <Content Include="Content\angularjs\angular.js" />
     <Content Include="Content\app.html" />
+    <Content Include="Content\components\cart.js" />
     <Content Include="Content\controllers\productListControllers.js" />
     <Content Include="Content\controllers\sportsStore.js" />
     <Content Include="Content\filters\customFilters.js" />
@@ -186,7 +187,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\components\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
