@@ -1,11 +1,23 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace SportsStore.Models
 {
+    public class OrderItem
+    {
+        [JsonProperty("id")]
+        public int ProductId { get; set; }
+
+        [JsonProperty("count")]
+        public int Quantity { get; set; }
+
+        [JsonProperty("price")]
+        public decimal Price { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+    }
+
     public class Order
     {
         [JsonProperty("name")]
@@ -29,7 +41,8 @@ namespace SportsStore.Models
         [JsonProperty("giftwrap")]
         public bool GiftWrap { get; set; }
 
-        public List<Product> Products { get; set; }
+        [JsonProperty("products")]
+        public List<OrderItem> Products { get; set; }
 
     }
 }
