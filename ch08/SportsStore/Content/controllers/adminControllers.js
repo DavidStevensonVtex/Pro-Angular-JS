@@ -1,13 +1,12 @@
 ﻿angular.module("sportsStoreAdmin")
 	.constant("authUrl", "http://localhost:5500/users/login")
+	.constant("ordersUrl", "Http://localhost:5500/orders")
 	.controller("authCtrl", function ($scope, $http, $location, authUrl) {
 		$scope.authenticate = function (user, pass) {
 			$http.post(authUrl, {
 				username: user,
 				password: pass
-			} /* , {
-				withCredentials: true
-			}*/ )
+			})
 				.success(function (data) {
 					$location.path("/main");
 				})
@@ -30,3 +29,27 @@
 				"/Content/views/adminOrders.html";
 		}
 	})
+	.controller("ordersCtrl", function ($scope, $http, ordersUrl) {
+
+		$http.get(ordersUrl, { withCredentials: true })
+			.success(function (data) {
+				$scope.orders = data;
+			})
+			.error(function (error) {
+				$scope.error = error;
+			});
+
+		$scope.selectedOrder;
+
+		$scope.selectedOrder = function (order) {
+			$scope.selectedOrder = order;
+		};
+
+		$scope.calcTotal = function (order) {
+			let total = 0;
+			for (let product of order.products) {
+				total += product.count * product.price;
+			}
+			return total;
+		}
+	});
