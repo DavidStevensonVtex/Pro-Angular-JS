@@ -1,10 +1,6 @@
 ﻿using SportsStore.Models;
 using System.Collections.Generic;
 using System.Web.Http;
-using System.Net;
-using System.Net.Http;
-using System;
-using Newtonsoft.Json;
 
 namespace SportsStore.Controllers
 {
