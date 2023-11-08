@@ -145,6 +145,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Admin.html" />
     <Content Include="Content\angularjs\angular.js" />
     <Content Include="Content\app.html" />
     <Content Include="Content\components\cart\cart.js" />
