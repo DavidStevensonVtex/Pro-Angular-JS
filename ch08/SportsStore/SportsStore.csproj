@@ -157,6 +157,7 @@
     <Content Include="Content\filters\customFilters.js" />
     <Content Include="Content\ngmodules\angular-resource.js" />
     <Content Include="Content\ngmodules\angular-route.js" />
+    <Content Include="Content\views\adminLogin.html" />
     <Content Include="Content\views\adminMain.html" />
     <Content Include="Content\views\checkoutSummary.html" />
     <Content Include="Content\views\placeOrder.html" />
