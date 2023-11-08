@@ -4,7 +4,7 @@
 		$httpProvider.defaults.withCredentials = true;
 	})
 	.controller("productCtrl", function ($scope, $resource, productUrl) {
-		$scope.productsResource = $resource(productUrl + ":id", { id: "@id" });
+		$scope.productsResource = $resource(productUrl + "/" + ":id", { id: "@id" });
 
 		$scope.listProducts = function () {
 			$scope.products = $scope.productsResource.query();
