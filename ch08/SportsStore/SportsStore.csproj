@@ -158,6 +158,7 @@
     <Content Include="Content\views\checkoutSummary.html" />
     <Content Include="Content\views\placeOrder.html" />
     <Content Include="Content\views\productList.html" />
+    <Content Include="Content\views\thankYou.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />

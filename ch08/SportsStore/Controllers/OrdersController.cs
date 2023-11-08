@@ -1,5 +1,6 @@
 ﻿using SportsStore.Models;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 
 namespace SportsStore.Controllers
@@ -15,9 +16,11 @@ namespace SportsStore.Controllers
 
         [Route("orders")]
         [HttpPost]
-        public void PostOrder(Order order)
+        public Order PostOrder(Order order)
         {
+            order.OrderId = OrderRepository.Orders.Count == 0 ? 123 : OrderRepository.Orders.Max(o => o.OrderId) + 1;
             OrderRepository.Orders.Add(order);
+            return order;
         }
     }
 }

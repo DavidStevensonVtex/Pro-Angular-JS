@@ -20,6 +20,9 @@ namespace SportsStore.Models
 
     public class Order
     {
+        [JsonProperty("id")]
+        public int OrderId { get; set; }
+
         [JsonProperty("name")]
         public string Name { get; set; }
 
