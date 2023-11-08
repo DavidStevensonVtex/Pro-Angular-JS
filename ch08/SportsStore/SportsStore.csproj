@@ -160,6 +160,8 @@
     <Content Include="Content\ngmodules\angular-route.js" />
     <Content Include="Content\views\adminLogin.html" />
     <Content Include="Content\views\adminMain.html" />
+    <Content Include="Content\views\adminOrders.html" />
+    <Content Include="Content\views\adminProducts.html" />
     <Content Include="Content\views\checkoutSummary.html" />
     <Content Include="Content\views\placeOrder.html" />
     <Content Include="Content\views\productList.html" />
