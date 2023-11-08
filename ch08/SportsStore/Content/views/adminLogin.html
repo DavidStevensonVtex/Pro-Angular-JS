@@ -3,6 +3,11 @@
 		Enter your username and password and click Log In to authenticate
 	</div>
 
+	<div class="alert alert-info" show="authenticationError">
+		Authentication Failed ({{authenticationError.status}})
+	</div>
+
+
 	<form name="authForm" novalidate>
 		<div class="form-group">
 			<label>Username</label>
