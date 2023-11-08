@@ -41,7 +41,7 @@
 
 		$scope.selectedOrder;
 
-		$scope.selectedOrder = function (order) {
+		$scope.selectOrder = function (order) {
 			$scope.selectedOrder = order;
 		};
 
