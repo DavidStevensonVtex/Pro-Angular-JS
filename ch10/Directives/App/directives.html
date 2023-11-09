@@ -26,10 +26,32 @@
     <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
         <h3 class="panel-header">To Do List</h3>
         <!--ng-repeat directive-->
-
+        <br /><br />
         <table class="table">
             <thead>
                 <tr>
+                    <th>#</th>
+                    <th>Action</th>
+                    <th>Done</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat-start="item in todos">
+                    <td>This is item {{$index}}</td>
+                </tr>
+                <tr>
+                    <td>The action is: {{item.action}}</td>
+                </tr>
+                <tr ng-repeat-end>
+                    <td>Item {{$index}} is {{ item.complete ? '' : "not " }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br /><br />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
                     <th>Action</th>
                     <th>Done</th>
                 </tr>
@@ -42,9 +64,11 @@
                 </tr>
             </tbody>
         </table>
+        <br /><br />
         <table class="table">
             <thead>
                 <tr>
+                    <th>#</th>
                     <th>Action</th>
                     <th>Done</th>
                 </tr>
@@ -56,10 +80,11 @@
                 </tr>
             </tbody>
         </table>
-
+        <br /><br />
         <table class="table">
             <thead>
                 <tr>
+                    <th>#</th>
                     <th>Action</th>
                     <th>Done</th>
                 </tr>
@@ -71,7 +96,7 @@
                 </tr>
             </tbody>
         </table>
-
+        <br /><br />
         <table class="table">
             <thead>
                 <tr>
@@ -85,9 +110,7 @@
                 </tr>
             </tbody>
         </table>
-
-
-
+        <br /><br />
         <table class="table">
             <thead>
                 <tr>
@@ -101,8 +124,7 @@
                 </tr>
             </tbody>
         </table>
-
-
+        <br /><br />
         <table class="table">
             <thead>
                 <tr>
@@ -117,6 +139,8 @@
                 </tr>
             </tbody>
         </table>
+        <br /><br />
+
         <!--Two way bindings-->
         <div class="well">
             <div>The first item is: {{todos[0].action}}</div>
