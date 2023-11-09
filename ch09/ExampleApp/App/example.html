@@ -15,6 +15,14 @@
             "exampleApp.Services",
             "exampleApp.Directives"]);
 
+        myApp.constant("startTime", new Date().toLocaleTimeString());
+        myApp.config(function (startTime) {
+            console.log("Main module config: " + startTime);
+        });
+        myApp.run(function (startTime) {
+            console.log("Main module run: " + startTime);
+        });
+
         angular.module("exampleApp.Directives", [])
             .directive("highlight", function ($filter) {
 
