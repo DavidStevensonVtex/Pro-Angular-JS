@@ -17,9 +17,12 @@
 			$scope.day = (new Date().getDay() + 1) % 7;
         });
 
-        myApp.directive("highlight", function () {
+        myApp.directive("highlight", function ($filter) {
+
+            let dayFilter = $filter("dayName");
+
             return function (scope, element, attrs) {
-                if (scope.day == attrs["highlight"]) {
+                if (dayFilter(scope.day) == attrs["highlight"]) {
                     element.css("color", "red");
                 }
             }
