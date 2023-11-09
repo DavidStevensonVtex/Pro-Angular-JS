@@ -103,6 +103,7 @@
   <ItemGroup>
     <Content Include="App\angularjs\angular.js" />
     <Content Include="App\directives.html" />
+    <Content Include="App\list.html" />
     <Content Include="App\table.html" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />

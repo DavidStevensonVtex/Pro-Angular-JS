@@ -9,13 +9,20 @@
         angular.module("exampleApp", [])
             .controller("defaultCtrl", function ($scope) {
                 $scope.todos = [
-					{ action: "Get groceries", complete: false },
-					{ action: "Call plumber", complete: false },
-					{ action: "Buy running shoes", complete: true },
-					{ action: "Buy flowers", complete: false },
-					{ action: "Call family", complete: false }
-                ]
-            })
+                    { action: "Get groceries", complete: false },
+                    { action: "Call plumber", complete: false },
+                    { action: "Buy running shoes", complete: true },
+                    { action: "Buy flowers", complete: false },
+                    { action: "Call family", complete: false }
+                ];
+
+				$scope.viewFile = function () {
+					let view = $scope.showList ? "list.html" : "table.html";
+					console.log("view", view);
+					return view;
+					//return $scope.showList ? "list.html" : "table.html";
+				}
+            });
     </script>
     <style>
         .odd { background-color: lightcoral }
@@ -25,7 +32,19 @@
 <body>
     <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
         <h3 class="panel-header">To Do List</h3>
+        <br /><br />
+        <div class="well">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="showList" />
+                    Use the list view
+                </label>
+            </div>
+        </div>
+
+        <ng-include src="viewFile()"></ng-include>
         <!--ng-include directive-->
+        <br /><br />
         <ng-include src="'table.html'"></ng-include>
         <!--ng-repeat directive-->
         <br /><br />
