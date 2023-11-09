@@ -31,7 +31,7 @@
                 Item 3 is complete
             </label>
         </div>
-        <table class="table">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>#</th>
@@ -40,7 +40,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in todos">
+                <tr ng-repeat="item in todos" ng-hide="item.complete">
                     <td>{{ $index + 1 }}</td>
                     <td ng-repeat="prop in item">{{prop}}</td>
                     <td>
