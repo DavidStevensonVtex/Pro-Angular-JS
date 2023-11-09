@@ -16,6 +16,8 @@
                     { action: "Call family", complete: false }
                 ];
 
+                $scope.data = {};
+
 				$scope.viewFile = function () {
 					return $scope.showList ? "list.html" : "table.html";
                 }
@@ -35,6 +37,41 @@
         <h3 class="panel-header">To Do List</h3>
         <br /><br />
         <div class="well">
+            <div class="radio" ng-repeat="button in [ 'None', 'Table', 'List' ]">
+                <label>
+                    <input type="radio" ng-model="data.mode" 
+                           value="{{button}}" ng-checked="$first" />
+                    {{button}}
+                </label>
+            </div>
+        </div>
+
+        <div ng-switch on="data.mode">
+            <div ng-switch-when="Table">
+                <table class="table">
+                    <thead>
+                        <tr><th>#</th><th>Action</th><th>Done</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in todos" ng-class="$odd ? 'odd' : 'even'">
+                            <td>{{ $index + 1 }}</td>
+                            <td ng-repeat="prop in item">{{prop}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div ng-switch-when="List">
+                <ol>
+                    <li ng-repeat="item in todos">
+                        {{item.action}}
+                        <span ng-if="item.complete"> (Done)</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <br /><br />
+        <div class="well">
             <div class="checkbox">
                 <label>
                     <input type="checkbox" ng-model="showList" />
@@ -45,7 +82,6 @@
 
         <div ng-include="viewFile()" onload="reportChange()"></div>
         <!--<ng-include src="viewFile()" onload="reportChange()"></ng-include>-->
-
         <!--ng-include directive-->
         <br /><br />
         <ng-include src="'table.html'"></ng-include>
