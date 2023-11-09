@@ -43,7 +43,9 @@
             </div>
         </div>
 
-        <ng-include src="viewFile()" onload="reportChange()"></ng-include>
+        <div ng-include="viewFile()" onload="reportChange()"></div>
+        <!--<ng-include src="viewFile()" onload="reportChange()"></ng-include>-->
+
         <!--ng-include directive-->
         <br /><br />
         <ng-include src="'table.html'"></ng-include>
