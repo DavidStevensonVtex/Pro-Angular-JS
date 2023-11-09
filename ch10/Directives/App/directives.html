@@ -32,6 +32,22 @@
             </thead>
             <tbody>
                 <tr ng-repeat="item in todos">
+                    <td ng-repeat="(key, value) in item">{{key}} = {{value}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Done</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in todos">
                     <td ng-repeat="prop in item">{{prop}}</td>
                 </tr>
             </tbody>
