@@ -5,9 +5,24 @@
     <script src="angularjs/angular.js"></script>
     <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.1/css/bootstrap-theme.css" rel="stylesheet" />
-
+    <script type="text/javascript">
+        angular.module("exampleApp", [])
+            .controller("defaultCtrl", function ($scope) {
+                $scope.todos = [
+					{ action: "Get groceries", complete: false },
+					{ action: "Call plumber", complete: false },
+					{ action: "Buy running shoes", complete: true },
+					{ action: "Buy flowers", complete: false },
+					{ action: "Call family", complete: false }
+                ]
+            })
+    </script>
 </head>
 <body>
+    <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
+        <h3 class="panel-header">To Do List</h3>
+        Data items will go here...
+    </div>
 
 </body>
 </html>
