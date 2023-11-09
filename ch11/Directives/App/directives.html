@@ -44,8 +44,8 @@
                     <td>{{ $index + 1 }}</td>
                     <td ng-repeat="prop in item">{{prop}}</td>
                     <td>
-                        <span ng-hide="item.complete">(Incomplete)</span>
-                        <span ng-show="item.complete">(Done)</span>
+                        <span ng-if="!item.complete">(Incomplete)</span>
+                        <span ng-if="item.complete">(Done)</span>
                     </td>
                 </tr>
             </tbody>
