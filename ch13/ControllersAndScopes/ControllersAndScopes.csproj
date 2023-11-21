@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="App\angularjs\angular.js" />
     <Content Include="App\controllers.html" />
+    <Content Include="App\controllers.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
