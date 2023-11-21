@@ -15,12 +15,6 @@
 				];
             });
     </script>
-    <style>
-        form.validate .ng-invalid-required.ng-dirty { background-color: lightpink ; }
-        form.validate .ng-invalid-email.ng-dirty { background-color: lightgoldenrodyellow ; }
-        form .ng-valid.ng-dirty { background-color: lightgreen ; }
-        div.error { color: red ; font-weight: bold }
-    </style>
 </head>
 <body>
     <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
@@ -30,6 +24,7 @@
                     <label>Select an Action:</label>
                     <select ng-model="selectValue" 
                             ng-options="item.action for item in todos">
+                        <option value="" disabled>(Pick One)</option>
                     </select>
                 </div>
             </div>
