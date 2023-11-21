@@ -24,13 +24,21 @@
         <form name="myForm" novalidate>
             <div class="well">
                 <div class="form-group">
-                    <label>Text:</label>
-                    <input name="sample" type="checkbox" class="forms-control" ng-model="inputValue"
-                           ng-true-value="Hurrah!" ng-false-value="Boo!" />
+                    <textarea name="sample" cols="40" rows="3"
+                              ng-model="textValue"
+                              ng-required="requireValue" 
+                              ng-minlength="3"
+                              ng-maxlength="10"
+                              ng-pattern="matchPattern">
+                     </textarea>
                 </div>
             </div>
             <div class="well">
-                <p>Model Value: {{ inputValue }} </p>
+                <p>Required Error: {{ myForm.sample.$error.required }} </p>
+                <p>Min Length Error: {{ myForm.sample.$error.minlength }} </p>
+                <p>Max Length Error: {{ myForm.sample.$error.maxlength }} </p>
+                <p>Pattern Error: {{ myForm.sample.$error.pattern }} </p>
+                <p>Element Valid: {{ myForm.sample.$valid }} </p>
             </div>
         </form>
     </div>
