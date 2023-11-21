@@ -8,13 +8,23 @@
     <script>
         angular.module("exampleApp", [])
             .controller("simpleCtrl", function ($scope) {
+                $scope.city = "London";
 
+                $scope.getCountry = function (city) {
+                    switch (city) {
+                        case "London":
+                            return "UK";
+                        case "New York":
+                            return "USA";
+                    }
+                }
             });
     </script>
 </head>
 <body>
     <div class="well" ng-controller="simpleCtrl">
-        Content will go here.
+        <p>The city is: {{ city }}</p>
+        <p>The country is: {{ getCountry(city) || "Unknown" }} </p>
     </div>
 </body>
 </html>
