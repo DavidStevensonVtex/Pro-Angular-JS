@@ -38,8 +38,11 @@
         <h4>Shipping Zip Code</h4>
         <div class="form-group">
             <input class="form-control" ng-model="shippingZip" />
+            <button class="btn btn-primary" ng-click="copyAddress()">
+                Use Billing
+            </button>
             <button class="btn btn-primary" ng-click="setAddress('shippingZip', shippingZip)">
-                Save Billing
+                Save Shipping
             </button>
         </div>
     </div>
