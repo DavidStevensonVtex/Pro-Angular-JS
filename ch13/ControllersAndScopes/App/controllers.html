@@ -9,11 +9,9 @@
         angular.module("exampleApp", [])
             .controller("simpleCtrl", function ($scope) {
 
-                $scope.addresses = {};
-
                 $scope.setAddress = function (type, zip) {
                     console.log("Type: ", type, "Zip: ", zip);
-                    $scope.addresses[type] = zip;
+                    $scope[type] = zip;
                 }
 
                 $scope.copyAddress = function () {
@@ -22,26 +20,26 @@
             });
     </script>
 </head>
-<body ng-controller="simpleCtrl">
+<body>
 
-    <div class="well">
+    <div class="well" ng-controller="simpleCtrl">
         <h4>Billing Zip Code</h4>
         <div class="form-group">
-            <input class="form-control" ng-model="billingZip" />
-            <button class="btn btn-primary" ng-click="setAddress('billingZip', billingZip)">
+            <input class="form-control" ng-model="zip" />
+            <button class="btn btn-primary" ng-click="setAddress('billingZip', zip)">
                 Save Billing
             </button>
         </div>
     </div>
 
-    <div class="well">
+    <div class="well" ng-controller="simpleCtrl">
         <h4>Shipping Zip Code</h4>
         <div class="form-group">
-            <input class="form-control" ng-model="shippingZip" />
+            <input class="form-control" ng-model="zip" />
             <button class="btn btn-primary" ng-click="copyAddress()">
                 Use Billing
             </button>
-            <button class="btn btn-primary" ng-click="setAddress('shippingZip', shippingZip)">
+            <button class="btn btn-primary" ng-click="setAddress('shippingZip', zip)">
                 Save Shipping
             </button>
         </div>
