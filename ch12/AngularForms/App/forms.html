@@ -23,7 +23,7 @@
                 <div class="form-group">
                     <label>Select an Action:</label>
                     <select ng-model="selectValue" 
-                            ng-options="item.action for item in todos">
+                            ng-options="item.id as item.action for item in todos">
                         <option value="" disabled>(Pick One)</option>
                     </select>
                 </div>
