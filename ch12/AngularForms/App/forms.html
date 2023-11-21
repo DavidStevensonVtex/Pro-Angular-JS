@@ -17,6 +17,7 @@
 
                 $scope.getError = function (error) {
                     if (angular.isDefined(error)) {
+                        console.log(error);
                         if (error.required) {
                             return "Please enter a value";
                         } else if (error.email) {
@@ -44,12 +45,7 @@
                     <input name="userEmail" type="email" class="forms-control"
                            required ng-model="newUser.email" />
                     <div class="error" ng-show="myForm.userEmail.$invalid && myForm.userEmail.$dirty">
-                        <span ng-show="myForm.userEmail.$error.email">
-                            Please enter a valid email address
-                        </span>
-                        <span ng-show="myForm.userEmail.$error.required">
-                            Please enter a value
-                        </span>
+                        {{ getError(myForm.userEmail.$error) }}
                     </div>
                 </div>
             </div>
