@@ -23,8 +23,8 @@
                     { name: "Whiskey", category: "Drinks", price: 45.99, expiry: 365 }
                 ];
 
-                $scope.selectItems = function (item) {
-                    return item.category == "Fish" || item.name == "Beer";
+                $scope.myCustomSorter = function (item) {
+                    return item.expiry < 5 ? 0 : item.price;
                 }
             });
     </script>
@@ -47,7 +47,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="p in products | orderBy:'-price' ">
+                <tr ng-repeat="p in products | orderBy:myCustomSorter ">
                     <td> {{ p.name }} </td>
                     <td> {{ p.category }} </td>
                     <td> {{ p.expiry }} </td>
