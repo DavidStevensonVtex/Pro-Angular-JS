@@ -12,6 +12,8 @@
         $(document).ready(function () {
             $('#jqui button').button().click(function (e) {
                 //alert("jquery UI Button was clicked");
+                console.log(window.angularRegion);
+                console.log(angularRegion);
                 angular.element(angularRegion).scope().$apply('handleClick()');
             });
         });
