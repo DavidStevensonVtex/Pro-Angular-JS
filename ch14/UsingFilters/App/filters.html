@@ -3,6 +3,7 @@
 <head>
     <title>Using Filters</title>
     <script src="angularjs/angular.js"></script>
+    <script src="angularjs/angular-locale_fr-fr.js"></script>
     <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.1/css/bootstrap-theme.css" rel="stylesheet" />
     <script>
@@ -48,7 +49,10 @@
             </thead>
             <tbody>
                 <tr ng-repeat="p in products">
-                    <td colspan="4"> {{ p | json }} </td>
+                    <td> {{ p.name | uppercase }} </td>
+                    <td> {{ p.category | lowercase }} </td>
+                    <td> {{ getExpiryDate(p.expiry) | date:"shortDate" }} </td>
+                    <td class="text-right"> ${{ p.price | number:0 }} </td>
                 </tr>
             </tbody>
         </table>
