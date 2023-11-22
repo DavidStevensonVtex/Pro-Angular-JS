@@ -6,51 +6,28 @@
     <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.1/css/bootstrap-theme.css" rel="stylesheet" />
     <script>
-        let app = angular.module("exampleApp", []);
+        let app = angular.module("exampleApp", [])
+            .controller("simpleCtrl", function () {
 
-        app.controller("firstController", function ($scope) {
+            this.dataValue = "Hello, Adam";
 
-            $scope.dataValue = "Hello, Adam";
-
-            $scope.reverseText = function () {
-                $scope.dataValue = $scope.dataValue.split("").reverse().join("");
-            }
-        });
-
-        app.controller("secondController", function ($scope) {
-
-            $scope.dataValue = "Hello, Jacqui";
-
-            $scope.changeCase = function () {
-                $scope.dataValue = $scope.dataValue.toUpperCase();
+            this.reverseText = function () {
+				this.dataValue = this.dataValue.split("").reverse().join("");
             }
         });
     </script>
 </head>
 <body>
-    <div class="well" ng-controller="firstController">
-        <h4>First Controller</h4>
+    <div class="well" ng-controller="simpleCtrl as ctrl">
+        <h4>Top Level Controller</h4>
         <div class="input-group">
             <span class="input-group-btn">
                 <button class="btn btn-default" type="button"
-                        ng-click="reverseText()">
+                        ng-click="ctrl.reverseText()">
                     Reverse
                 </button>
             </span>
-            <input class="form-control" ng-model="dataValue" />
-        </div>
-    </div>
-
-    <div class="well" ng-controller="secondController">
-        <h4>First Controller</h4>
-        <div class="input-group">
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button"
-                        ng-click="changeCase()">
-                    Case
-                </button>
-            </span>
-            <input class="form-control" ng-model="dataValue" />
+            <input class="form-control" ng-model="ctrl.dataValue" />
         </div>
     </div>
 </body>
