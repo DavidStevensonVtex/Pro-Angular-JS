@@ -48,8 +48,8 @@
             </thead>
             <tbody>
                 <tr ng-repeat="p in products">
-                    <td> {{ p.name }} </td>
-                    <td> {{ p.category }} </td>
+                    <td> {{ p.name | uppercase }} </td>
+                    <td> {{ p.category | lowercase }} </td>
                     <td> {{ getExpiryDate(p.expiry) | date:"dd MMM yy" }} </td>
                     <td class="text-right"> ${{ p.price | number:0 }} </td>
                 </tr>
