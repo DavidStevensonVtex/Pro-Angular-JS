@@ -52,10 +52,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="p in products | limitTo:limitVal">
+                <tr ng-repeat="p in products | filter:{ category: 'Fish' }">
                     <td> {{ p.name }} </td>
                     <td> {{ p.category }} </td>
-                    <td> {{ getExpiryDate(p.expiry) | date:"shortDate" }} </td>
+                    <td> {{ p.expiry }} </td>
                     <td class="text-right"> ${{ p.price | number:0 }} </td>
                 </tr>
             </tbody>
