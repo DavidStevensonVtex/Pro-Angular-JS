@@ -11,7 +11,8 @@
     <script>
         $(document).ready(function () {
             $('#jqui button').button().click(function (e) {
-                alert("jquery UI Button was clicked");
+                //alert("jquery UI Button was clicked");
+                angular.element(angularRegion).scope().$apply('handleClick()');
             });
         });
 
@@ -35,7 +36,7 @@
     </script>
 </head>
 <body>
-    <div class="well" ng-controller="simpleCtrl">
+    <div id="angularRegion" class="well" ng-controller="simpleCtrl">
         <h4>AngularJS</h4>
         <div class="checkbox">
             <label>
