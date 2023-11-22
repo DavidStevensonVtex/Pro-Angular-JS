@@ -23,4 +23,10 @@
 				return data;
 			}
 		}
+	})
+	.filter("take", function ($filter) {
+		return function (data, skipCount, takeCount) {
+			let skippedData = $filter("skip")(data, skipCount);
+			return $filter("limitTo")(skippedData, takeCount);
+		}
 	});
