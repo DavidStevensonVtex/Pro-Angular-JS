@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="App\angularjs\angular-locale_fr-fr.js" />
     <Content Include="App\angularjs\angular.js" />
+    <Content Include="App\customFilters.js" />
     <Content Include="App\filters.html" />
     <Content Include="Web.config" />
   </ItemGroup>
