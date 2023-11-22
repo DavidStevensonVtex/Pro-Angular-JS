@@ -25,6 +25,12 @@
                 $scope.handleClick = function () {
                     $scope.clickCounter++;
                 }
+
+                $scope.$watch('buttonEnabled', function (newValue) {
+                    $('#jqui button').button({
+                        disabled: !newValue
+                    });
+                })
             });
     </script>
 </head>
