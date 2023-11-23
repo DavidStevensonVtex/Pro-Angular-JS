@@ -11,12 +11,13 @@
                 return function (scope, element, attrs) {
                     console.log("scope", scope, "element", element, "attrs", attrs);
                     let data = scope[attrs["unorderedList"]];
+                    let propertyName = attrs["listProperty"];
                     console.log("data", data);
                     if (angular.isArray(data)) {
                         let listElem = angular.element("<ul>");
                         element.append(listElem);
                         for (item of data) {
-                            listElem.append(angular.element("<li>").text(item.name));
+                            listElem.append(angular.element("<li>").text(item[propertyName]));
                         }
                     }
                 }
@@ -37,7 +38,7 @@
         </div>
     </div>
     <div class="panel-body">
-        <div unordered-list="products"></div>
+        <div unordered-list="products" list-property="name"></div>
     </div>
 </body>
 </html>
