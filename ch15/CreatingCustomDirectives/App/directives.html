@@ -13,8 +13,9 @@
                     let data = scope[attrs["unorderedList"]];
                     console.log("data", data);
                     if (angular.isArray(data)) {
+                        let listElem = angular.element("<ul>");
                         for (item of data) {
-                            console.log("Item: ", item.name);
+                            listElem.append(angular.element("<li>").text(item.name));
                         }
                     }
                 }
