@@ -9,15 +9,17 @@
         angular.module("exampleApp", [])
             .directive("unorderedList", function () {
                 return function (scope, element, attrs) {
-                    console.log("scope", scope, "element", element, "attrs", attrs);
+                    //console.log("scope", scope, "element", element, "attrs", attrs);
                     let data = scope[attrs["unorderedList"]];
-                    let propertyName = attrs["listProperty"];
-                    console.log("data", data);
+                    let propertyExpression = attrs["listProperty"];
+                    //console.log("propertyExpression", propertyExpression);
+                    //console.log("data", data);
                     if (angular.isArray(data)) {
                         let listElem = angular.element("<ul>");
                         element.append(listElem);
                         for (item of data) {
-                            listElem.append(angular.element("<li>").text(item[propertyName]));
+                            listElem.append(angular.element("<li>")
+                                .text(scope.$eval(propertyExpression, item)));
                         }
                     }
                 }
