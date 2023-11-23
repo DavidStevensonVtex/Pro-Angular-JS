@@ -33,7 +33,9 @@
 
                 $scope.incrementPrices = function () {
                     for (let item of $scope.products) {
+                        console.log("item", item);
                         item.price++;
+						console.log("item", item);
                     }
                 }
             });
@@ -44,6 +46,11 @@
         <div class="panel-heading">
             <h3>Products</h3>
         </div>
+    </div>
+    <div class="panel-body">
+        <button class="btn btn-primary" ng-click="incrementPrices()">
+            Change Prices
+        </button>
     </div>
     <div class="panel-body">
         <div unordered-list="products" list-property="price | currency"></div>
