@@ -17,15 +17,18 @@
                     if (angular.isArray(data)) {
                         let listElem = angular.element("<ul>");
                         element.append(listElem);
-                        for (let i = 0; i < data.length; i++ ) {
-                            let itemElement = angular.element("<li>");
-                            listElem.append(itemElement);
-							let watcherFn = function (watchScope) {
-								return watchScope.$eval(propertyExpression, data[i]);
-                            }
-                            scope.$watch(watcherFn, function (newValue, oldValue) {
-                                itemElement.text(newValue);
-                            });
+                        for (let i = 0; i < data.length; i++) {
+                            (function () {
+                                let itemElement = angular.element("<li>");
+                                listElem.append(itemElement);
+                                let index = i;
+                                let watcherFn = function (watchScope) {
+                                    return watchScope.$eval(propertyExpression, data[index]);
+                                }
+                                scope.$watch(watcherFn, function (newValue, oldValue) {
+                                    itemElement.text(newValue);
+                                });
+                            }());
                         }
                     }
                 }
@@ -39,9 +42,9 @@
 
                 $scope.incrementPrices = function () {
                     for (let item of $scope.products) {
-                        console.log("item", item);
+                        //console.log("item", item);
                         item.price++;
-						console.log("item", item);
+						//console.log("item", item);
                     }
                 }
             });
