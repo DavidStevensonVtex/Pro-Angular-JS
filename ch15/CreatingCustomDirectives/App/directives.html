@@ -1,12 +1,17 @@
 ﻿<!DOCTYPE html>
 <html ng-app="exampleApp">
 <head>
-    <title>Using Filters</title>
+    <title>Directives</title>
     <script src="angularjs/angular.js"></script>
     <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.1/css/bootstrap-theme.css" rel="stylesheet" />
     <script>
         angular.module("exampleApp", [])
+            .directive("unorderedList", function () {
+                return function (scope, element, attrs) {
+                    // implementation code will go here
+                }
+            })
             .controller("defaultCtrl", function ($scope) {
                 $scope.products = [
                     { name: "Apples", category: "Fruit", price: 1.20, expiry: 10 },
@@ -15,7 +20,6 @@
                 ];
             });
     </script>
-    <script src="customFilters.js"></script>
 </head>
 <body ng-controller="defaultCtrl">
     <div class="panel panel-default">
