@@ -14,6 +14,7 @@
                     console.log("data", data);
                     if (angular.isArray(data)) {
                         let listElem = angular.element("<ul>");
+                        element.append(listElem);
                         for (item of data) {
                             listElem.append(angular.element("<li>").text(item.name));
                         }
