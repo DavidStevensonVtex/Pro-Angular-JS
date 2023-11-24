@@ -18,7 +18,9 @@
                         scope.data = scope[attrs["unorderedList"]];
                     },
                     restrict: "A",
-					templateUrl: "itemTemplate.html"
+                    templateUrl: function (elem, attrs) {
+                        return attrs["template"] == "table" ? "tableTemplate.html" : "itemTemplate.html";
+                    }
                 };
             })
             .controller("defaultCtrl", function ($scope) {
@@ -39,6 +41,12 @@
     <div class="panel-body">
         <div unordered-list="products">
             This is where the list will go
+        </div>
+    </div>
+    <div class="panel-body">
+        <div unordered-list="products" template="table">
+            This is where the list will go
+        </div>
     </div>
 </body>
 </html>
