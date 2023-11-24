@@ -10,25 +10,10 @@
             .directive("unorderedList", function () {
                 return {
                     link: function (scope, element, attrs) {
-                        let data = scope[attrs["unorderedList"]] || attrs["listSource"];
-                        let propertyExpression = attrs["listProperty"] || "price | currency";
-                        if (angular.isArray(data)) {
-                            let listElem = angular.element("<ul>");
-
-                            if (element[0].nodeName == "#comment") {
-                                element.parent().append(listElem);
-                            } else {
-                                element.append(listElem);
-                            }
-
-                            for (let item of data) {
-                                let itemElement = angular.element("<li>")
-                                    .text(scope.$eval(propertyExpression, item));
-                                listElem.append(itemElement);
-                            }
-                        }
+                        scope.data = scope[attrs["unorderedList"]];
                     },
-                    restrict: "EACM"
+                    restrict: "A",
+                    template: "<ul><li ng-repeat='item in data'> {{ item.price | currency }} </li></ul"
                 };
             })
             .controller("defaultCtrl", function ($scope) {
@@ -47,7 +32,8 @@
         </div>
     </div>
     <div class="panel-body">
-        <!-- directive: unordered-list products -->
+        <div unordered-list="products">
+            This is where the list will go
     </div>
 </body>
 </html>
