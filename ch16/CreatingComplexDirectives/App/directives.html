@@ -18,10 +18,7 @@
                         scope.data = scope[attrs["unorderedList"]];
                     },
                     restrict: "A",
-                    template: function () {
-                        console.log("listTemplate", listTemplate.innerHTML);
-                        return angular.element(document.querySelector("#listTemplate")).html();
-                    }
+					templateUrl: "itemTemplate.html"
                 };
             })
             .controller("defaultCtrl", function ($scope) {
