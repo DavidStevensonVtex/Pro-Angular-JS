@@ -18,7 +18,8 @@
                         scope.data = scope[attrs["unorderedList"]];
                     },
                     restrict: "A",
-                    templateUrl: "tableTemplate.html"
+                    templateUrl: "tableTemplate.html",
+                    replace: true
                 };
             })
             .controller("defaultCtrl", function ($scope) {
