@@ -5,6 +5,11 @@
     <script src="angularjs/angular.js"></script>
     <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.1/css/bootstrap-theme.css" rel="stylesheet" />
+    <script type="text/template" id="listTemplate">
+        <ul>
+            <li ng-repeat="item in data"> {{ item.price | currency }} </li>
+        </ul>
+    </script>
     <script>
         angular.module("exampleApp", [])
             .directive("unorderedList", function () {
@@ -13,7 +18,9 @@
                         scope.data = scope[attrs["unorderedList"]];
                     },
                     restrict: "A",
-                    template: "<ul><li ng-repeat='item in data'> {{ item.price | currency }} </li></ul"
+                    template: function () {
+                        return angular.element(document.querySelector("#listTemplate")).html();
+                    }
                 };
             })
             .controller("defaultCtrl", function ($scope) {
