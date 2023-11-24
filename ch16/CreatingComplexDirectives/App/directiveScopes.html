@@ -14,21 +14,19 @@
         angular.module("exampleApp", [])
             .directive("scopeDemo", function () {
                 return {
-                    template: "<div class='panel-body'>Name: <input ng-model=name /></div>" 
+                    template: "<div class='panel-body'>Name: <input ng-model=name /></div>",
+                    scope: true
                 };
             })
             .controller("scopeCtrl", function ($scope) {
                 // do nothing - no behaviors required
-            })
-            .controller("secondCtrl", function ($scope) {
-                // do nothing - no behaviors required
-            })
+            });
     </script>
 </head>
-<body>
+<body ng-controller="scopeCtrl">
     <div class="panel panel-default">
-        <div ng-controller="scopeCtrl" class="panel-body" scope-demo></div>
-        <div ng-controller="secondCtrl" class="panel-body" scope-demo></div>
+        <div class="panel-body" scope-demo></div>
+        <div class="panel-body" scope-demo></div>
     </div>
 </body>
 </html>
