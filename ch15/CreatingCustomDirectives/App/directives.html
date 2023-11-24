@@ -2,6 +2,7 @@
 <html ng-app="exampleApp">
 <head>
     <title>Directives</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.1.min.js"></script>
     <script src="angularjs/angular.js"></script>
     <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.1/css/bootstrap-theme.css" rel="stylesheet" />
@@ -15,15 +16,12 @@
                     //console.log("propertyExpression", propertyExpression);
                     //console.log("data", data);
                     if (angular.isArray(data)) {
-                        let listElem = angular.element("<ul>");
-                        element.append(listElem);
-                        for (let i = 0; i < data.length; i++) {
+                        let listElem = angular.element("<ul>").appendTo(element);
+                        for (let item of data) {
                             (function () {
-                                let itemElement = angular.element("<li>");
-                                listElem.append(itemElement);
-                                let index = i;
+                                let itemElement = angular.element("<li>").appendTo(listElem);
                                 let watcherFn = function (watchScope) {
-                                    return watchScope.$eval(propertyExpression, data[index]);
+                                    return watchScope.$eval(propertyExpression, item);
                                 }
                                 scope.$watch(watcherFn, function (newValue, oldValue) {
                                     itemElement.text(newValue);
