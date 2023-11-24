@@ -7,9 +7,10 @@
         angular.module("exampleApp", [])
             .directive("demoDirective", function () {
                 return function (scope, element, attrs) {
-                    let listElem = element.append("<ol>");
+                    let listElem = angular.element("<ol>");
+                    element.append(listElem);
                     for (let name of scope.names) {
-                        listElem.append("<li>").append("<span>").text(name);
+                        listElem.append(angular.element("<li>").append("<span>").text(name));
                     }
                 }
             })
